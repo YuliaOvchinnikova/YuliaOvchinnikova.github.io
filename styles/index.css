@@ -1,0 +1,252 @@
+@import url('../vendor/normalize.css');
+@import url('../vendor/font.css');
+
+:root {
+  --pink: #f3e7e9;
+  --lavanda: #dad4ec;
+  --latte: #e5dcd8;
+  --cappuccino: #b49f90;
+
+  --light-gray: #b2afab;
+  --pink-gray: #8F898A;
+  --middle-gray: #828282;
+  --dark-gray: #545454;
+  --moredark-gray: #474747;
+  --black: #000;
+  --white: #fff;
+}
+
+.body {
+  /* background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%); */
+  background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #e5dcd8 100%);
+
+}
+
+.page {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: 'Inter', 'Arial', sans-serif;
+  color: var(--black);
+}
+
+.content {
+  max-width: calc(100% - 100px*2);
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: none;
+  /* color: #8F898A; */
+  color: #474747;
+  /* color: #828282; */
+  cursor: pointer;
+}
+
+/* header */
+.header {
+  padding: 20px 0;
+  border-bottom: 1px solid #828282;
+}
+
+/* .navigation__links {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation__link-element {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.13;
+} */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "intro photo media"
+    "skills . about";
+  align-items: flex-end;
+  /* border: 1px solid red; */
+  padding-top: 30px;
+}
+
+.intro {
+  margin: 0 auto;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: intro;
+}
+
+.intro__title {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.13;
+  color: #8F898A;
+  margin: 0;
+  /* color: #474747; */
+  /* color: #828282; */
+}
+
+.intro__name {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.13;
+  margin-bottom: 0;
+}
+
+.photo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-right: 10px;
+  grid-area: photo;
+}
+
+.media {
+  grid-area: media;
+  /* align-items: flex-end; */
+
+
+}
+
+.media__links {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  /* text-align: end; */
+  align-self: flex-end;
+}
+
+.media__link-element {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.media__link-logo {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+.skills {
+  grid-area: skills;
+}
+
+.skills__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 10px;
+  justify-items: auto;
+  text-align: center;
+}
+
+.skills__element {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.13;
+  color: #828282;
+  margin: 0;
+  border: 2px solid #8F898A;
+  border-radius: 5px;
+  /* color: #474747; */
+  /* color: #828282; */
+  transition: opacity .5s ease-in-out;
+  cursor: default;
+}
+
+.skills__element:hover {
+  opacity: .5;
+}
+
+.skills__element-download {
+  display: flex;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.13;
+  cursor: pointer;
+  justify-self: center;
+}
+
+.skills__download {
+  width: 35px;
+  height: 35px;
+}
+
+.about {
+  grid-area: about;
+}
+
+.portfolio {
+  margin: 0 auto;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content;
+  gap: 20px 17px;
+  justify-items: center;
+}
+
+.portfolio__project {
+  width: 80%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.portfolio__image {
+  width: 100%;
+  min-height: 270px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.portfolio__title {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.13;
+  margin: auto 40px;
+  color: #474747;
+}
+
+.footer {
+  margin: 0 auto;
+  padding: 67px 0 60px;
+}
+
+.footer__copyright {
+  color: var(--dark-gray);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
