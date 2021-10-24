@@ -77,14 +77,14 @@
 
 .container {
   display: grid;
+  grid-gap: 50px 0;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     "intro photo media"
     "skills . about";
   align-items: flex-end;
-  /* border: 1px solid red; */
-  padding-top: 30px;
+  padding: 30px 0 30px;
 }
 
 .intro {
@@ -125,17 +125,12 @@
 
 .media {
   grid-area: media;
-  /* align-items: flex-end; */
-
-
 }
 
 .media__links {
   display: flex;
   margin: 0;
   padding: 0;
-  /* text-align: end; */
-  align-self: flex-end;
 }
 
 .media__link-element {
@@ -152,6 +147,7 @@
 
 .skills {
   grid-area: skills;
+  align-self: flex-start;
 }
 
 .skills__list {
@@ -200,11 +196,20 @@
 
 .about {
   grid-area: about;
+  align-self: flex-start;
+}
+
+.about__text {
+  padding: 0 0 10px;
+  margin: 0;
+}
+
+.about__text:last-child {
+  padding: 0;
 }
 
 .portfolio {
   margin: 0 auto;
-  padding: 50px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: max-content;
@@ -235,6 +240,13 @@
   line-height: 1.13;
   margin: auto 40px;
   color: #474747;
+}
+
+.promises {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.13;
 }
 
 .footer {
